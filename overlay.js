@@ -5,8 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageIndicators = document.getElementById('page-indicators'); // Für die Seitenanzeige
 
     const PAGE_SIZE = 5; // Anzahl der Spiele pro Seite im Overlay
-const testLocalStorageData = localStorage.getItem('winChallengeTitle');
-document.getElementById('overlayChallengeTitle').textContent = `DEBUG: Titel: ${testLocalStorageData || 'NICHT GEFUNDEN'}`;
+
     let currentPage = 0; // Aktuelle Seite für die Anzeige
 
     // Funktion zum Formatieren der Zeit (HH:MM:SS) - Duplikat aus script.js, aber notwendig für Overlay
@@ -18,7 +17,10 @@ document.getElementById('overlayChallengeTitle').textContent = `DEBUG: Titel: ${
         return `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
     };
 
-    // Hauptfunktion zum Aktualisieren des Overlays
+        const testLocalStorageData = localStorage.getItem('winChallengeTitle');
+        document.getElementById('overlayChallengeTitle').textContent = `DEBUG: Titel: ${testLocalStorageData || 'NICHT GEFUNDEN'}`;
+    
+// Hauptfunktion zum Aktualisieren des Overlays
     const updateOverlay = () => {
         // Titel laden
         const savedTitle = localStorage.getItem('winChallengeTitle');
